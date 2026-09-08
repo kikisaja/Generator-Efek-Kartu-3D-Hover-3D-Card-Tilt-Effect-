@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Card Tilt Effect - Generator Efek Kartu 3D Hover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Generator Efek Kartu 3D Hover</h1>
+            <p>Gerakkan kursor di atas kartu untuk melihat efek kemiringan 3D interaktif.</p>
+        </header>
+
+        <div class="layout">
+            <!-- Panel Kontrol Pengaturan Efek -->
+            <aside class="control-panel">
+                <h2>Pengaturan Efek</h2>
+
+                <!-- Control: Intensitas Kemiringan (Max Tilt) -->
+                <div class="control-group">
+                    <label for="maxTiltInput">
+                        Maksimal Tilt: <span id="maxTiltVal">20°</span>
+                    </label>
+                    <input type="range" id="maxTiltInput" min="5" max="45" value="20">
+                </div>
+
+                <!-- Control: Efek Kedalaman Perspektif -->
+                <div class="control-group">
+                    <label for="perspectiveInput">
+                        Perspektif 3D: <span id="perspectiveVal">1000px</span>
+                    </label>
+                    <input type="range" id="perspectiveInput" min="400" max="2000" step="50" value="1000">
+                </div>
+
+                <!-- Control: Kecepatan Transisi Kembalian -->
+                <div class="control-group">
+                    <label for="speedInput">
+                        Kecepatan Transisi: <span id="speedVal">300ms</span>
+                    </label>
+                    <input type="range" id="speedInput" min="100" max="800" step="50" value="300">
+                </div>
+
+                <!-- Toggle: Efek Kilauan (Glare) -->
+                <div class="control-group checkbox-group">
+                    <label for="glareToggle">Aktifkan Efek Kilauan (Glare)</label>
+                    <input type="checkbox" id="glareToggle" checked>
+                </div>
+
+                <!-- Kode Output CSS -->
+                <div class="code-output">
+                    <label>Kode Transformasi Terkini:</label>
+                    <textarea id="cssCode" readonly></textarea>
+                    <button id="copyBtn" class="btn-copy">Salin Kode Transform</button>
+                </div>
+            </aside>
+
+            <!-- Area Pratinjau Kartu 3D -->
+            <main class="preview-area" id="previewArea">
+                <div class="card-wrapper" id="cardWrapper">
+                    <div class="card-3d" id="card3d">
+                        <!-- Lapisan Kilauan (Glare Layer) -->
+                        <div class="card-glare" id="cardGlare"></div>
+                        
+                        <!-- Konten Kartu -->
+                        <div class="card-content">
+                            <span class="badge">UI/UX Design</span>
+                            <div class="card-icon">🎨</div>
+                            <h3>Desain Interaktif 3D</h3>
+                            <p>Properti CSS Perspective dan Transform 3D memungkinkan elemen web merespons pergerakan kursor secara dinamis.</p>
+                            <button class="card-btn">Jelajahi Fitur</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
